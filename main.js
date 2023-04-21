@@ -10,5 +10,5 @@ let nicknames = [
   "Quick-Silver",
 ];
 
-let firstData;
-fetch("data/");
+// Output
+let outputEl = document.getElementById
