@@ -1,10 +1,9 @@
 // Nickname Generator CYU Assignment Kevin Patel
 
-// Load data from files
-let nicknameData;
-fetch("data/nicknamedata.txt")
+let nicknames;
+fetch("nickname-data.txt")
   .then((rawData) => rawData.text())
-  .then((strData) => (nicknameData = strData.split(/\r?\n/)));
+  .then((strData) => (nicknames = strData.split(/\r?\n/)));
 
 // Output
 let outputEl = document.getElementById("output");
@@ -33,5 +32,23 @@ function btnClicked() {
 
 // Menu Option Functions
 function traverseDisplayAll() {
-  outputEl.innerHTML = surveyData;
+  // Input
+  let first = document.getElementById("first").value;
+  let last = document.getElementById("last").value;
+
+  // Output Results
+  outputEl.innerHTML = "";
+  for (let i = 0; i < nicknames.length; i++) {
+    outputEl.innerHTML += `<p>${i}: ${first} "${nicknames[i]}" ${last}</p>`;
+  }
+}
+
+function traverseDisplayRandom() {
+  // Input
+  let first = document.getElementById("first").value;
+  let last = document.getElementById("last").value;
+
+  // Output Results
+  let randNickname = randomELement(nicknames);
+  outputEl.innerHTML += `<p>${first} "${randNickname}" ${last}</p>`;
 }
