@@ -49,6 +49,28 @@ function traverseDisplayRandom() {
   let last = document.getElementById("last").value;
 
   // Output Results
-  let randNickname = randomELement(nicknames);
+  outputEl.innerHTML = "";
+  let randNickname = randomElement(nicknames);
   outputEl.innerHTML += `<p>${first} "${randNickname}" ${last}</p>`;
+}
+
+function traverseAdd() {
+  // Input
+  outputEl.innerHTML = "";
+  let newNickname = prompt("Enter a new nickname: ");
+
+  outputEl.innerHTML += `<p>Added Nickname: ${newNickname}`;
+  nicknames.push(newNickname);
+}
+
+function traverseRemoveLast() {
+  // Input
+  let last = nicknames.pop();
+  outputEl.innerHTML = `<p>Last Nickname Removed: ${last}`;
+}
+
+function traverseRemoveIndex() {
+  // Input
+  let index = +prompt("Enter a number");
+  nicknames.splice(index, 1);
 }
