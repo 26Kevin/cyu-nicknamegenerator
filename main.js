@@ -72,5 +72,10 @@ function traverseRemoveLast() {
 function traverseRemoveIndex() {
   // Input
   let index = +prompt("Enter a number");
-  nicknames.splice(index, 1);
+  if (index >= 0 && index < nicknames.length) {
+    let nicknameindex = nicknames.splice(index, 1);
+    outputEl.innerHTML = `<p>Nickname Remove at index ${index}: ${nicknameindex}`;
+  } else {
+    outputEl.innerHTML = `<p>Invalid Index`;
+  }
 }
