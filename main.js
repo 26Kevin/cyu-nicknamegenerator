@@ -25,8 +25,6 @@ function btnClicked() {
     traverseRemoveLast();
   } else if (selection === "removeindex") {
     traverseRemoveIndex();
-  } else if (selection === "removename") {
-    traverseRemoveName();
   }
 }
 
